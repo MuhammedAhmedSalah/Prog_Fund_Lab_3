@@ -18,6 +18,7 @@ using namespace std;
 
 #include <cstdio>    // C standard I/O functions such as printf
 #include <iostream>  // Standard input/output library
+#include<escapeCharBehav.h>
 int main() {
   /* cout << "Hello, World!" << endl;
  setCursorPosition(20, 20);
@@ -112,8 +113,8 @@ height) ? "Valid" : "Invalid") << endl;*/
 
 
 
-
-
+*/
+/*
   std::printf(
       "Press the arrow keys to test the program (press 'q' to quit):\n");
   char byte1 = 'q';
@@ -130,13 +131,10 @@ height) ? "Valid" : "Invalid") << endl;*/
     cout << "Byte 1 int value:: " << static_cast<int>(byte1) << endl;
     cout << "Number of Bytes " << bytesAvailable << endl;
     if (byte1 == '\033') {
-      /*
-       
-
       if (bytesAvailable == 0) {
-        cout << "Escape char"<<endl;  // escape character behav. here
+        cout << "Escape char" << endl;  // escape character behav. here
       } else {
-        cout<<"Arrow "<<endl;
+        cout << "Arrow " << endl;
         byte2 = getch_linux();
         cout << "Byte 1 int value:: " << static_cast<int>(byte1) << endl;
 
@@ -148,14 +146,41 @@ height) ? "Valid" : "Invalid") << endl;*/
         cout << "Byte 3 char value:: " << (byte3) << endl;
         cout << "Full escape sequence: " << static_cast<int>(byte1) << byte2
              << byte3 << endl;
+
+        if (byte3 == 'A') {
+          std::printf("↑ Up Arrow\n");
+          //arrow up behaviour here
+        } else if (byte3 == 'B') {
+          std::printf("↓ Down Arrow\n");
+          //arrow down behaviour here
+        }
       }
+    } else if(byte1==10){
+      cout<<"Enter key pressed"<<endl;
+      //Enter key behaviour here
     }
 
     std::cout << "=================================" << std::endl;
-  } while (byte1 != 'q' && byte1 != 'Q');
+  } while (byte1 != 'q' && byte1 != 'Q');*/
 
-*/
+  // runApplication();
+
+  /*
+cout<<"Testing readArrowKey function"<<endl;
+int result = readArrowKey();
+if(result == -1){
+    cout << "Escape character detected." << endl;
+}
+else if(result == 1){
+    cout << "Up arrow key detected." << endl;
+}
+else if(result == 2){
+    cout << "Down arrow key detected." << endl;
+}
+else if(result == 3){
+    cout << "Enter key detected." << endl;
+}       */
+
 runApplication();
-
   return 0;
 }

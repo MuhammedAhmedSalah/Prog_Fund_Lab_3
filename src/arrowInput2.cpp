@@ -11,6 +11,7 @@ char getch_linux() {
 
     // Save the current terminal settings
     tcgetattr(0, &old);
+    
 
     // Disable Canonical Mode (do not wait for Enter key)
     old.c_lflag &= ~ICANON;
